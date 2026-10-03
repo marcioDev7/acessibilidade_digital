@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acessibilidade para Todos</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="cabecalho">
+  <div class="container">
+    <h1>Acessibilidade</h1>
+    <p> Acessibilidade para todos, uma internet mais acessível.</p>
+  </div>
+</header>
+
+
+<main class="container">
+  <section class="conteudo">
+    <article class="card">
+      <h2>O que é acessibilidade?</h2>
+      <p>A acessibilidade digital permite que pessoas com diferentes necessidades possam utilizar sites, aplicativos e outros recursos tecnológicos de maneira mais fácil e independente.  </p>
+      <p>Um site acessível deve considerar diferentes formas de interação, leitura, navegação e compreensão do conteúdo.</p>
+    </article>
+    
+    <article class="card">
+      <h2>Por que ela é importante?</h2>
+      <p>A acessibilidade digital é fundamental porque garante que pessoas com deficiência ou limitações temporárias possam navegar, estudar, trabalhar e consumir online de forma independente. </p>
+    </article>
+
+    <article class="card">
+      <h2>Acessibilidade na internet</h2>
+      <p>Desenvolver páginas acessíveis é uma forma de tornar a tecnologia mais inclusiva.</p>
+      <h3>Alguns exemplos</h3>
+      <ul>
+
+        <li>Textos fáceis de ler e compreender;</li>
+        <li>Boa diferença entre texto e fundo;</li>
+        <li>Botões identificados de forma clara;</li>
+        <li>Possibilidade de ampliar o conteúdo;</li>
+        <li>Compatibilidade com tecnologias assistivas.</li>
+      </ul>
+
+    </article>
+  </section>
+</main>
+
+<button class="botao-painel" id="abrirPainel" aria-label="Abrir painel de acessibilidade">♿</button>
+
+<section class="painel-flutuante" id="painelAcessibilidade" aria-labelledby="titulo-painel">
+  <div class="topo-painel">
+    <h2 id="titulo-painel">♿ Painel de Acessibilidade</h2>
+    <button type="button" class="fechar-painel" id="fecharPainel" aria-label="Fechar painel">✕</button>
+  </div>
+  <p class="instrucao">Use os botões abaixo para adaptar a página às suas necessidades.</p>
+  <div class="botoes-acessibilidade">
+
+    <button type="button" id="aumentarFonte">🔠 Aumentar fonte</button>
+
+    <button type="button" id="diminuirFonte">🔡 Diminuir fonte</button>
+
+    <button type="button" id="altoContraste" aria-pressed="false">⚫ Alto contraste</button>
+
+    <button type="button" id="modoEscuro" aria-pressed="false">🌙 Modo escuro</button>
+
+    <button type="button" id="escalaCinza" aria-pressed="false">🖤 Escala de cinza</button>
+
+    <button type="button" id="espacamento" aria-pressed="false">↔️ Espaçamento</button>
+
+    <button type="button" id="lerTexto">🔊 Ler texto</button>
+
+    <button type="button" id="fonteDislexia" aria-pressed="false">👓 Fonte para dislexia</button>
+    
+    <button type="button" id="resetar" class="btn-resetar">↺ Restaurar padrão</button>
+  </div>
+</section>
+
+<footer><div class="container"><p>Acessibilidade é para todos</p></div></footer>
+
+<div id="aviso" class="aviso" role="status" aria-live="polite"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

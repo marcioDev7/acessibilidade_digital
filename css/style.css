@@ -1,0 +1,325 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+    line-height: 1.6;
+    transition: 0.2s;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: auto;
+}
+
+.cabecalho {
+    background: #2457a6;
+    color: white;
+    padding: 35px 0;
+    text-align: center;
+}
+
+.cabecalho h1 {
+    margin: 0 0 8px;
+    font-size: 2.2rem;
+}
+
+.cabecalho p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.conteudo {
+    display: grid;
+    gap: 22px;
+    margin: 30px 0 35px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card h2,
+.card h3 {
+    color: #174681;
+}
+
+.card p {
+    margin: 12px 0;
+}
+
+.card li {
+    margin-bottom: 8px;
+}
+
+footer {
+    background: #1e293b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.botao-painel {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 2px solid #2457a6;
+    background: white;
+    color: #2457a6;
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 2000;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+.botao-painel:hover,
+.botao-painel:focus {
+    background: #e9f1ff;
+    outline: 3px solid #ffbf00;
+    outline-offset: 2px;
+}
+
+.painel-flutuante {
+    position: fixed;
+    right: 15px;
+    bottom: 80px;
+    width: 350px;
+    max-width: calc(100vw - 30px);
+    max-height: 80vh;
+    overflow-y: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    z-index: 1999;
+    display: none;
+}
+
+.painel-flutuante.aberto {
+    display: block;
+}
+
+.topo-painel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.topo-painel h2 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.fechar-painel {
+    width: 40px;
+    min-height: 40px;
+    padding: 5px;
+    border: 0;
+    background: #eee;
+    color: #222;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.instrucao {
+    margin-bottom: 20px;
+}
+
+.botoes-acessibilidade {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.botoes-acessibilidade button {
+    width: 100%;
+    border: 2px solid #2457a6;
+    background: #fff;
+    color: #12345f;
+    border-radius: 8px;
+    padding: 13px 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    min-height: 50px;
+}
+
+.botoes-acessibilidade button:hover,
+.botoes-acessibilidade button:focus {
+    background: #e9f1ff;
+    outline: 3px solid #ffbf00;
+    outline-offset: 2px;
+}
+
+.botoes-acessibilidade button.ativo {
+    background: #2457a6;
+    color: white;
+}
+
+.botoes-acessibilidade .btn-resetar {
+    border-color: #8b2d2d;
+    color: #8b2d2d;
+}
+
+body.alto-contraste {
+    background: #000;
+    color: #fff;
+}
+
+body.alto-contraste .card,
+body.alto-contraste .painel-flutuante {
+    background: #000;
+    color: #fff;
+    border: 3px solid #fff;
+}
+
+body.alto-contraste .card h2,
+body.alto-contraste .card h3,
+body.alto-contraste .topo-painel h2 {
+    color: #ffff00;
+}
+
+body.alto-contraste .botoes-acessibilidade button {
+    background: #000;
+    color: #fff;
+    border-color: #ffff00;
+}
+
+body.alto-contraste .botoes-acessibilidade button.ativo,
+body.alto-contraste .botoes-acessibilidade button:hover {
+    background: #ffff00;
+    color: #000;
+}
+
+body.alto-contraste footer {
+    background: #000;
+    border-top: 3px solid #fff;
+}
+
+body.modo-escuro {
+    background: #121212;
+    color: #eee;
+}
+
+body.modo-escuro .card,
+body.modo-escuro .painel-flutuante {
+    background: #1f1f1f;
+    color: #eee;
+}
+
+body.modo-escuro .card h2,
+body.modo-escuro .card h3,
+body.modo-escuro .topo-painel h2 {
+    color: #8db7ff;
+}
+
+body.modo-escuro .botoes-acessibilidade button {
+    background: #292929;
+    color: #fff;
+    border-color: #8db7ff;
+}
+
+body.modo-escuro .botoes-acessibilidade button.ativo {
+    background: #2457a6;
+}
+
+body.escala-cinza {
+    filter: grayscale(100%);
+}
+
+body.espacamento {
+    line-height: 2;
+    letter-spacing: 0.06em;
+    word-spacing: 0.15em;
+}
+
+body.espacamento p,
+body.espacamento li {
+    margin-bottom: 18px;
+}
+
+body.fonte-dislexia,
+body.fonte-dislexia button {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+body.fonte-dislexia {
+    letter-spacing: 0.04em;
+}
+
+.aviso {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    background: #111;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: none;
+    z-index: 3000;
+    max-width: 90%;
+    text-align: center;
+}
+
+.aviso.mostrar {
+    display: block;
+}
+
+@media (max-width: 600px) {
+
+    .cabecalho {
+        padding: 28px 15px;
+    }
+
+    .cabecalho h1 {
+        font-size: 1.8rem;
+    }
+
+    .cabecalho p {
+        font-size: 1rem;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .painel-flutuante {
+        right: 10px;
+        bottom: 75px;
+        width: calc(100vw - 20px);
+        max-height: 75vh;
+        padding: 18px;
+    }
+
+    .botao-painel {
+        right: 10px;
+        bottom: 10px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .topo-painel h2 {
+        font-size: 1.2rem;
+    }
+}
